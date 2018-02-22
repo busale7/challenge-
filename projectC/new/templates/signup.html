@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block batman %}
+Sign Up
+{% endblock batman %}
+{% block superman %}
+{% load crispy_forms_tags %}
+
+
+
+
+<br>
+ <form action="{% url 'signup_list' %}" method="POST" enctype="multipart/form-data">
+ 	{% csrf_token %}
+ 	{{form|crispy}}
+ 	<input type ="submit" value="Sign Up!" class="btn btn-outline-success">
+ </form>
+ 
+
+{% endblock superman %}

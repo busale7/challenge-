@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block batman %}
+List
+{% endblock batman %}
+{% block superman %}
+<br>
+ 
+
+<div class="card text-center">
+  <div class="card-header">
+   {% if mychallenge.image %}
+	<img src="{{mychallenge.image}}"/>				
+					
+			
+			  {% endif %}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{mychallenge.name}}</h5>
+    <p class="card-text">{{mychallenge.content}}</p>
+    <p class="card-text">{{mychallenge.created_on}}</p>  
+  </div>
+  <div class="card-footer text-muted">
+   {{mychallenge.updated_on}}
+  </div>
+  <a href="{% url 'list_challenge' %}" class="btn btn-primary">Back</a> 
+  <a href="{% url 'update' challenge_id=mychallenge.id %}" class="btn btn-primary">Update</a> 
+</div>
+				
+			
+
+<br>
+{% endblock superman %}

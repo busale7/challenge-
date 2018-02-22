@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block batman %}
+Create a challenge
+{% endblock batman %}
+{% block superman %}
+{% load crispy_forms_tags %}
+
+<form action="{% url 'create_list' %}" method='POST' enctype ="multipart/form-data">
+	{{form|crispy}}
+	{% csrf_token %} 	
+	<input type="submit" value="create" class="btn btn-primary"/>
+</form>
+
+{% endblock superman %}
